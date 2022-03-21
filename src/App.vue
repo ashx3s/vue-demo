@@ -5,20 +5,14 @@
     <h1 class="text-5xl uppercase md:text-6xl lg:text-7xl">Main Page</h1>
   </header>
 
-  <BaseSection>
-    <template #section-header>
-      <BaseSectionHeader :title="sectionHeaderTitle" />
-    </template>
-    <template #section-body>
+  <BaseSection :title="sectionTitle">
+    <template #content>
       <p class="max-w-prose text-xl mx-auto">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias amet saepe porro deserunt
         doloribus, veritatis enim rem suscipit ipsa! Dolore est vero, iusto provident harum vel eos
         itaque veniam iste quas corrupti doloribus molestiae incidunt quia dolores veritatis alias
         quod molestias necessitatibus optio porro, cumque aspernatur expedita. Ea, quasi maxime!
       </p>
-    </template>
-    <template #section-footer>
-      <p class="text-2xl text-black font-semibold mx-auto">Section Footer</p>
     </template>
   </BaseSection>
 
@@ -57,7 +51,7 @@ import BaseSection from './components/BaseSection.vue';
 import BaseSectionHeader from './components/BaseSectionHeader';
 
 // Variables
-const sectionHeaderTitle = 'Example Header';
+const sectionTitle = 'Demo Section';
 
 const numberArray = [1, 2, 3, 4, 5];
 const multipliedArray = computed(() => {
