@@ -40,6 +40,24 @@
         </ul>
       </div>
     </section>
+    <BaseSection :title="'Grocery Array'">
+      <template #content>
+        <ul class="text-xl text-center">
+          <li v-for="product in groceries" :key="product.id">
+            {{ product.item }} -- {{ product.cost }}
+          </li>
+        </ul>
+      </template>
+    </BaseSection>
+    <BaseSection :title="'Groceries with Tax'">
+      <template #content>
+        <ul class="text-xl text-center">
+          <li v-for="product in groceriesWithTax" :key="product.id">
+            {{ product.name }} -- {{ product.cost }}
+          </li>
+        </ul>
+      </template>
+    </BaseSection>
   </main>
 </template>
 
@@ -54,7 +72,36 @@ import BaseSectionHeader from './components/BaseSectionHeader';
 const sectionTitle = 'Demo Section';
 
 const numberArray = [1, 2, 3, 4, 5];
+
 const multipliedArray = computed(() => {
   return numberArray.map((num) => num * 5);
+});
+
+// Groceries
+const groceries = [
+  {
+    item: 'bread',
+    cost: 5.45
+  },
+  {
+    item: 'eggs',
+    cost: 4.5
+  },
+  {
+    item: 'tuna',
+    cost: 2.25
+  },
+  {
+    item: 'avocado',
+    cost: 3.0
+  }
+];
+
+// Computed Tax Groceries
+const groceriesWithTax = computed(() => {
+  return groceries.map((product) => ({
+    name: product.item,
+    cost: parseFloat((product.cost * 1.05).toFixed(2))
+  }));
 });
 </script>
