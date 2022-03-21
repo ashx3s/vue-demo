@@ -3,10 +3,10 @@
   <header class="flex flex-col items-center justify-center h-40 py-4">
     <h1 class="text-5xl uppercase md:text-6xl lg:text-7xl">Main Page</h1>
   </header>
-  <main class="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+  <main class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-4">
     <section class="flex flex-col bg-gray-200 rounded-sm py-4">
-      <header class="grid place-items-center">
-        <h2 class="text-black text-2xl md:text-4xl font-semi-bold">Render a List</h2>
+      <header class="grid place-items-center text-center mx-1">
+        <h2 class="text-black text-3xl md:text-4xl font-medium">Render a List</h2>
       </header>
       <div class="flex justify-center">
         <ul class="my-4">
@@ -15,8 +15,8 @@
       </div>
     </section>
     <section class="flex flex-col bg-pink-200 rounded-sm py-4">
-      <header class="grid place-items-center">
-        <h2 class="text-black text-2xl md:text-4xl font-semi-bold">Render a Computed List</h2>
+      <header class="grid place-items-center text-center mx-1">
+        <h2 class="text-black text-3xl md:text-4xl font-medium">Render a Computed List</h2>
       </header>
       <div class="flex justify-center">
         <ul class="my-4">
