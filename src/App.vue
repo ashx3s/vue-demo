@@ -58,15 +58,22 @@
         </ul>
       </template>
     </BaseSection>
+    <section></section>
   </main>
 </template>
 
 <script setup>
 // Imports
 import { computed } from 'vue';
-import TheHeader from './components/TheHeader.vue';
-import BaseSection from './components/BaseSection.vue';
+import TheHeader from './components/ui/TheHeader.vue';
+import BaseSection from './components/layout/BaseSection.vue';
 import BaseSectionHeader from './components/BaseSectionHeader';
+
+// Lifecycle Hook: onMounted
+import { onMounted } from 'vue';
+onMounted(() => {
+  console.log(`This is the component being mounted`);
+});
 
 // Variables
 const sectionTitle = 'Demo Section';
@@ -104,4 +111,9 @@ const groceriesWithTax = computed(() => {
     cost: parseFloat((product.cost * 1.05).toFixed(2))
   }));
 });
+
+// calculate sum total of items in the cart
+const getCartTotal = (arr) => {
+  arr.reduce((acc, curr) => acc + curr.cost, 0);
+};
 </script>
